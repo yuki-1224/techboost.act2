@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'topics/new'
   root 'pages#index'
   get 'pages/help'
 
@@ -9,4 +10,5 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
 
   resources :users
+  resources :topics
 end

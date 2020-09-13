@@ -24,12 +24,15 @@
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
             <li>
+                <a href="/topics">投稿一覧</a>
+            </li>
+            <li>
               <%= link_to '#' do %>
                 <% image_tag "icons/heart.png" %>
               <% end %>
             </li>
             <li>
-              <%= link_to '#' do %>
+              <%= link_to new_topic_path do %>
                 <% image_tag "icons/camera.png" %>
               <% end %>
             </li>

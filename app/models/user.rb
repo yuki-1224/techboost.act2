@@ -9,4 +9,6 @@ class User < ApplicationRecord
   validates :password, presence: true, format: {with: PASS_REGULAR}
 
   has_secure_password
+
+  has_many :topics
 end
