@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'topics/new'
+
+
   root 'pages#index'
   get 'pages/help'
 
@@ -11,4 +12,12 @@ Rails.application.routes.draw do
 
   resources :users
   resources :topics
+
+  get 'favorites/index'
+  post '/favorites' => 'favorites#create'
+  delete '/favorites' => 'favorites#destroy'
+
+  get '/comments' => 'comments#new'
+  post '/comments' => 'comments#create'
+  delete '/comments' => 'comments#destroy'
 end

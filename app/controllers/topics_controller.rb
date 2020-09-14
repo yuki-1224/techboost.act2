@@ -1,6 +1,11 @@
 class TopicsController < ApplicationController
   def index
-    @topics = Topic.all
+    @topics = Topic.all.order(id: "DESC").includes(:favorite_users)
+  end
+
+  def show
+    @topic = Topic.find(params[:id])
+    @comments = Comment.where(topic_id: params[:id])
   end
 
   def new
